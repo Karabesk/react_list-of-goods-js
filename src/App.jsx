@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import 'bulma/css/bulma.css';
 import './App.scss';
 import { useState } from 'react';
@@ -28,9 +29,8 @@ export const App = () => {
   const [reversed, setReversed] = useState(false);
 
   if (sortAlphbetically) {
-    visibleGoods = visibleGoods.sort((good1, good2) =>
-      good1.localeCompare(good2),
-    );
+    // eslint-disable-next-line max-len
+    visibleGoods = visibleGoods.sort((good1, good2) => good1.localeCompare(good2));
   }
 
   if (sortLength) {

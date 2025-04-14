@@ -1,7 +1,7 @@
 export const Goods = ({ goods }) => {
   return (
     <ul>
-      {goods.map((good) => (
+      {goods.map(good => (
         <li data-cy="Good" key={good}>
           {good}
         </li>
