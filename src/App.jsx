@@ -5,8 +5,8 @@ import { useState } from 'react';
 import cn from 'classnames';
 import { Goods } from './components/Goods/goods';
 
-const SORT_FIELD_ALPH = 'Alpabethically';
-const SORT_FIELD_LENGTH = 'Lenght';
+const SORT_FIELD_ALPH = 'Alphabetically';
+const SORT_FIELD_LENGTH = 'Length';
 
 export const goodsFromServer = [
   'Dumplings',
@@ -89,7 +89,7 @@ export const App = () => {
         <button
           type="button"
           className={cn(['is-danger', 'button', 'is-light'], {
-            'is-hidden': !reversed && !sortLength && !sortAlphbetically,
+            'is-hidden': !(reversed || sortLength || sortAlphbetically),
           })}
           onClick={() => {
             setSortLength('');
