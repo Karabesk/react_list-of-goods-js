@@ -24,7 +24,7 @@ export const goodsFromServer = [
 export const App = () => {
   let visibleGoods = [...goodsFromServer];
 
-  const [sortAlphbetically, setSortalphAbetically] = useState('');
+  const [sortAlphbetically, setSortAlphabetically] = useState('');
   const [sortLength, setSortLength] = useState('');
   const [reversed, setReversed] = useState(false);
 
@@ -43,14 +43,14 @@ export const App = () => {
     visibleGoods = [...visibleGoods].reverse();
   }
 
-  const sortAlphbetFunc = () => {
-    setSortalphAbetically(SORT_FIELD_ALPH);
+  const sortByName = () => {
+    setSortAlphabetically(SORT_FIELD_ALPH);
     setSortLength('');
   };
 
-  const sortLengthFunc = () => {
+  const sortByLength = () => {
     setSortLength(SORT_FIELD_LENGTH);
-    setSortalphAbetically('');
+    setSortAlphabetically('');
   };
 
   return (
@@ -61,7 +61,7 @@ export const App = () => {
           className={cn(['button', 'is-info'], {
             'is-light': !sortAlphbetically,
           })}
-          onClick={() => sortAlphbetFunc()}
+          onClick={() => sortByName()}
         >
           Sort alphabetically
         </button>
@@ -71,7 +71,7 @@ export const App = () => {
           className={cn(['button', 'is-success'], {
             'is-light': !sortLength,
           })}
-          onClick={() => sortLengthFunc()}
+          onClick={() => sortByLength()}
         >
           Sort by length
         </button>
@@ -93,7 +93,7 @@ export const App = () => {
           })}
           onClick={() => {
             setSortLength('');
-            setSortalphAbetically('');
+            setSortAlphabetically('');
             setReversed(false);
           }}
         >
